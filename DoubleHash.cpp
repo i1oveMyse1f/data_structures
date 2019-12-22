@@ -2,7 +2,8 @@
 
 template<class T = unsigned>
 struct DoubleHash {
-	friend T pow(const T a, const T n, const T p) {
+private:
+	T pow(const T a, const T n, const T p) {
 		if (n == 0)
 			return 1;
 		unsigned long long t = pow(a, n >> 1, p);
@@ -11,9 +12,11 @@ struct DoubleHash {
 			t = t * a % p;
 		return t;
 	}
-	friend T inv(const T x, const T p) {
+	T inv(const T x, const T p) {
 		return pow(x, p - 2, p);
 	}
+
+public:
 
 	T x1, x2;
 	static const T MOD1 = 1e9 + 9;
