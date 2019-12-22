@@ -1,6 +1,8 @@
+#include <iostream>
+
 template<class T = unsigned>
 struct DoubleHash {
-	T pow(const T a, const T n, const T p) {
+	friend T pow(const T a, const T n, const T p) {
 		if (n == 0)
 			return 1;
 		unsigned long long t = pow(a, n >> 1, p);
@@ -9,7 +11,7 @@ struct DoubleHash {
 			t = t * a % p;
 		return t;
 	}
-	T inv(const T x, const T p) {
+	friend T inv(const T x, const T p) {
 		return pow(x, p - 2, p);
 	}
 
@@ -72,13 +74,13 @@ struct DoubleHash {
 		return *this = *this / other;
 	}
 
-	friend istream& operator>>(istream& in, DoubleHash& a) {
+	friend std::istream& operator>>(std::istream& in, DoubleHash& a) {
 		in >> a.x1;
 		a.x2 = a.x1;
 		return in;
 	}
 
-	friend ostream& operator<<(ostream& out, const DoubleHash a) {
+	friend std::ostream& operator<<(std::ostream& out, const DoubleHash a) {
 		return out << "{ " << a.x1 << ", " << a.x2 << " } ";
 	}
 
