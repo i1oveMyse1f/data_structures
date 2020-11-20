@@ -8,4 +8,4 @@
 
 4. MapForPoor is standart educational problem for analysing running time algorithm
 
-5. HashMap is simple version for std::unordered_map
+5. HashMap is simple version of std::unordered_map
