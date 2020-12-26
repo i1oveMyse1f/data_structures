@@ -6,6 +6,8 @@
 
 3. FixedSet is realisation of Perfect Hash function (https://en.wikipedia.org/wiki/Perfect_hash_function)
 
-4. MapForPoor is standart educational problem for analysing running time algorithm
+4. MapForPoor is standart educational problem for analysing running time algorithm.
+Insert query by $O(log n)$ amortized
+Contains query by $O(\log^2 n)$
 
 5. HashMap is simple version of std::unordered_map
