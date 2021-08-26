@@ -1,3 +1,11 @@
+#pragma once
+
+#include <algorithm>
+#include <list>
+#include <stdexcept>
+#include <utility>
+#include <vector>
+
 template<class A, class B>
 class MapForPoor {
 public:
